@@ -34,6 +34,7 @@ const AuthPage = () => {
           autoComplete="off"
         >
           <p className={s.form_title}>Вход</p>
+          <p>Для теста - login: Admin, password: Admin</p>
           <Form.Item
             label="Username"
             name="username"
