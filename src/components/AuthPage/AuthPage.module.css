@@ -1,0 +1,45 @@
+.main_form_wrapper {
+  width: 100%;
+  height: 100vh;
+  background: url("../../assets/vr.jpg") no-repeat center fixed;
+  background-size: cover;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.form_wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 55%;
+  width: 35%;
+  border-radius: 7px;
+  border: 1px solid white;
+  background: rgba(0, 0, 0, 0.5);
+}
+
+.form {
+  width: 100%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.form_title {
+  font-size: 1.5rem;
+  color: white;
+  margin-bottom: 0.1rem;
+}
+
+.form_item {
+  width: 286px;
+  color: white;
+}
+
+.form_button {
+  margin: 0 auto;
+}

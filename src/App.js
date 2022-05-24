@@ -1,9 +1,12 @@
 import "./App.css";
+import AuthPage from "./components/AuthPage/AuthPage";
+// import Header from "./components/Header/Header";
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">Learn React</header>
+      {/* <Header /> */}
+      <AuthPage />
     </div>
   );
 }
