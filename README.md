@@ -20,7 +20,7 @@
 4. Если пользователь не найден, то происходит переход на страницу входа.
 5. При выходе пользователя из системы происходит переход на страницу входа. -->
 
-**Technical task.**
+<!-- **Technical task.**
 
 **В данном задании необходимо реализовать приложение для поиска youtube-видео по ключевым словам, а также сохранение запросов поиска.**
 
@@ -63,4 +63,4 @@
 
 4.  Redux: https://redux.js.org/
 
-5.  React Router: https://reacttraining.com/react-router/
+5.  React Router: https://reacttraining.com/react-router/ -->
