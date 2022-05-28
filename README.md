@@ -1,9 +1,9 @@
-**Использанные frameworks:**
+**Used frameworks:**
 
 1. antd
 2. react-router-dom.
 3. react-google-login
-4. <a href="https://www.npmjs.com/package/formik">formik</a>
+4. <a href="https://axios-http.com/">axios</a>
 
 <hr></hr>
 
