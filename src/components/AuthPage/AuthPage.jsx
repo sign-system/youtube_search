@@ -1,97 +1,71 @@
-import { Button, Form, Input } from "antd";
-import "antd/dist/antd.css";
-import ReactGoogleAuth from "../ReactGoogleAuth/ReactGoogleAuth";
 import s from "./AuthPage.module.css";
+import axios from "axios";
+import { useState } from "react";
+import PropTypes from "prop-types";
 
-const AuthPage = () => {
-  const onFinish = (values) => {
-    console.log("Success:", values);
+async function loginUser(credentials) {
+  return axios
+    .post("http://typ-back.herokuapp.com/api/auth/login", {
+      login: credentials.login,
+      password: credentials.password,
+    })
+    .then((res) => {
+      return res.data;
+    });
+}
+
+const AuthPage = ({ setToken }) => {
+  const [login, setLogin] = useState("");
+  const [password, setPassword] = useState("");
+
+  const onLoginChange = (e) => {
+    setLogin(e.target.value);
   };
 
-  const onFinishFailed = (errorInfo) => {
-    console.log("Failed:", errorInfo);
+  const onPasswordChange = (e) => {
+    setPassword(e.target.value);
+  };
+
+  const onSubmit = async (e) => {
+    e.preventDefault();
+    const res = await loginUser({ login, password });
+    console.log(res.token);
   };
 
   return (
-    <div className={s.main_form_wrapper}>
-      <div className={s.form_wrapper}>
-        <Form
-          className={s.form}
-          layout="vertical"
-          size="small"
-          name="basic"
-          labelCol={{
-            span: 0,
-          }}
-          wrapperCol={{
-            span: 0,
-          }}
-          initialValues={{
-            remember: true,
-          }}
-          onFinish={onFinish}
-          onFinishFailed={onFinishFailed}
-          autoComplete="off"
-        >
-          <p className={s.form_title}>Вход</p>
-          <p>Для теста - login: Admin, password: Admin</p>
-          <Form.Item
-            label="Username"
-            name="username"
-            rules={[
-              {
-                required: true,
-                message: "Please input your username!",
-              },
-            ]}
-          >
-            <Input className={s.form_item} />
-          </Form.Item>
+    <div className={s.form_wrapper}>
+      <form className={s.form} onSubmit={onSubmit}>
+        <p className={s.form_title}>Вход</p>
+        <label className={s.label}>
+          Логин{" "}
+          <input
+            className={s.input}
+            type="text"
+            onChange={onLoginChange}
+            placeholder="Введите свой login"
+          />
+        </label>
 
-          <Form.Item
-            label="Password"
-            name="password"
-            rules={[
-              {
-                required: true,
-                message: "Please input your password!",
-              },
-            ]}
-          >
-            <Input.Password className={s.form_item} />
-          </Form.Item>
+        <label className={s.label}>
+          Пароль
+          <input
+            className={s.input}
+            type="password"
+            onChange={onPasswordChange}
+            placeholder="Введите свой пароль"
+          />
+        </label>
 
-          {/* <Form.Item
-            name="remember"
-            valuePropName="checked"
-            wrapperCol={{
-              offset: 8,
-              span: 16,
-            }}
-          >
-            <Checkbox>Remember me</Checkbox>
-          </Form.Item> */}
-
-          <Form.Item
-            wrapperCol={{
-              offset: 0,
-              span: 0,
-            }}
-          >
-            <Button
-              type="primary"
-              htmlType="submit"
-              size="middle"
-              className={s.form_button}
-            >
-              Войти
-            </Button>
-          </Form.Item>
-          <ReactGoogleAuth />
-        </Form>
-      </div>
+        <button className={s.button} type="submit">
+          Войти
+        </button>
+      </form>
     </div>
   );
+};
+
+AuthPage.propTypes = {
+  setToken: PropTypes.func.isRequired,
 };
 
 export default AuthPage;

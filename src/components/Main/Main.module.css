@@ -1,24 +1,8 @@
-.form {
-  display: flex;
-  flex-direction: column;
-  width: 30%;
-  margin: auto;
-  gap: 10px;
-}
-
-
-
-.button {
-  background-color: #4caf50;
-  border: none;
-  color: white;
-  padding: 15px 12px;
+.main {
   text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 16px;
-  margin: 4px 2px;
-  cursor: pointer;
-  width: 30%;
-  margin: auto;
+  font-size: 34px;
+  font-weight: bold;
+  color: red;
+  background-color: #ffdb8b;
+  height: 100vh;
 }
