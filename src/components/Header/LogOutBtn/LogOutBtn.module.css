@@ -1,0 +1,13 @@
+.header_logout_title {
+  background-color: inherit;
+  border: none;
+  color: inherit;
+  padding: 8px 15px;
+  font-size: 12px;
+  font-family: "Press Start 2P", cursive;
+}
+
+.header_logout_title:hover {
+  cursor: pointer;
+  border: 1px solid #ccc;
+}

@@ -14,6 +14,7 @@ async function loginUser(credentials) {
     });
 }
 
+
 const AuthPage = ({ setToken }) => {
   const [login, setLogin] = useState("");
   const [password, setPassword] = useState("");
@@ -29,6 +30,7 @@ const AuthPage = ({ setToken }) => {
   const onSubmit = async (e) => {
     e.preventDefault();
     const res = await loginUser({ login, password });
+    setToken(res.token);
     console.log(res.token);
   };
 
@@ -36,6 +38,9 @@ const AuthPage = ({ setToken }) => {
     <div className={s.form_wrapper}>
       <form className={s.form} onSubmit={onSubmit}>
         <p className={s.form_title}>Вход</p>
+        <p className={s.form_test_title}>
+          Для тестирования, логин: Youtube, пароль: 123456{" "}
+        </p>
         <label className={s.label}>
           Логин{" "}
           <input

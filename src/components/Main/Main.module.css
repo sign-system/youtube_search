@@ -1,8 +1,13 @@
 .main {
   text-align: center;
-  font-size: 34px;
+  /* font-size: 24px; */
   font-weight: bold;
-  color: red;
-  background-color: #ffdb8b;
+  color: white;
   height: 100vh;
+  background: linear-gradient(90deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+  background-size: 400% 400%;
+  animation: gradient 10s ease infinite;
+  transform: translate3d(0, 0, 0);
+  padding: 0 120px;
 }
+
