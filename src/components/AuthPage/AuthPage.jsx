@@ -14,7 +14,6 @@ async function loginUser(credentials) {
     });
 }
 
-
 const AuthPage = ({ setToken }) => {
   const [login, setLogin] = useState("");
   const [password, setPassword] = useState("");
