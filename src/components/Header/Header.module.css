@@ -1,5 +1,5 @@
 header {
-  background-color: #ff0000;
+  background-color: #82898F;
   height: 55px;
   font-size: 14px;
   color: white;
@@ -29,13 +29,13 @@ header {
 }
 
 .header_search_title {
-  font-size: 12px;
+  font-size: 16px;
   color: white;
   text-decoration: none;
 }
 
 .header_favorites_title {
-  font-size: 12px;
+  font-size: 16px;
   color: white;
   text-decoration: none;
 }

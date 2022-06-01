@@ -1,0 +1,38 @@
+.seacrh {
+  margin-bottom: 20px;
+}
+
+.seacrh_title {
+  height: 40px;
+  line-height: 40px;
+  font-size: 24px;
+  margin: 20px auto;
+  font-weight: bold;
+}
+
+.search_input {
+  width: 70%;
+  height: 30px;
+  line-height: 40px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding-left: 10px;
+  font-size: 14px;
+}
+
+.search_button {
+  width: 100px;
+  height: 30px;
+  text-align: center;
+  background-color: #ff0000;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  margin-left: 10px;
+  font-size: 16px;
+  сursor: pointer;
+}
+
+.search_button:hover {
+  cursor: pointer;
+}
