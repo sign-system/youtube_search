@@ -18,7 +18,6 @@ function App() {
           <Route path="/" element={<Main />}>
             <Route index element={<Search />} />
             <Route path="favorites" element={<Favorites />} />
-            <Route path="*" element={<div>404</div>} />
           </Route>
         </Routes>
       </BrowserRouter>

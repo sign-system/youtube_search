@@ -5,14 +5,11 @@ import SearchForm from "./SearchForm/SearchForm";
 import VideoList from "../VideoList/VideoList";
 
 const Search = () => {
-  const KEY = "AIzaSyC7php9QeYlRT1IcNN7f0BSzQMNj9K3TnY";
   const [searchTerm, setSearchTerm] = useState("");
   const [videos, setVideos] = useState([]);
 
   const handleChange = (event) => {
-    setSearchTerm({
-      term: event.target.value,
-    });
+    setSearchTerm(event.target.value);
   };
 
   const handleSubmit = (event) => {
@@ -20,14 +17,11 @@ const Search = () => {
     youtube
       .get("/search", {
         params: {
-          // part: "snippet",
-          maxResults: 12,
-          key: KEY,
-          q: searchTerm.term,
+          q: searchTerm,
         },
       })
       .then((response) => {
-        console.log(response);
+        console.log(response.data.items[0]);
         setVideos(response.data.items);
       });
   };
