@@ -2,9 +2,9 @@ import s from "./SearchForm.module.css";
 
 const SearchForm = ({ handleSubmit, handleChange }) => {
   return (
-    <>
-      <div className={s.seacrh_title}>Поиск видео</div>
-      <form onSubmit={handleSubmit}>
+    <div className={s.search}>
+      <div className={s.search_title}>Поиск видео</div>
+      <form className={s.search_form} onSubmit={handleSubmit}>
         <input
           className={s.search_input}
           onChange={handleChange}
@@ -14,7 +14,7 @@ const SearchForm = ({ handleSubmit, handleChange }) => {
         />
         <button className={s.search_button}>Найти</button>
       </form>
-    </>
+    </div>
   );
 };
 

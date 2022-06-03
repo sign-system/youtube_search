@@ -2,7 +2,7 @@ import s from "./Search.module.css";
 import youtube from "../../../youtube";
 import { useState } from "react";
 import SearchForm from "./SearchForm/SearchForm";
-import VideoList from "../VideoList/VideoList";
+import VideoList from "./VideoList/VideoList";
 
 const Search = () => {
   const [searchTerm, setSearchTerm] = useState("");

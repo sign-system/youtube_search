@@ -1,13 +1,21 @@
-.seacrh {
+.search {
   margin-bottom: 20px;
+  margin-left: auto;
+  margin-right: auto;
+  width: 70%;
 }
 
-.seacrh_title {
+.search_title {
   height: 40px;
   line-height: 40px;
   font-size: 24px;
   margin: 20px auto;
   font-weight: bold;
+  text-align: center;
+}
+
+.search_form {
+  text-align: center;
 }
 
 .search_input {

@@ -1,9 +1,4 @@
 .main {
-  text-align: center;
   height: auto;
-  background-size: 400% 400%;
-  animation: gradient 10s ease infinite;
-  transform: translate3d(0, 0, 0);
   padding: 0 120px;
 }
-
