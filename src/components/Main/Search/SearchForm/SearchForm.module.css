@@ -16,21 +16,46 @@
 
 .search_form {
   text-align: center;
+  display: flex;
+}
+
+.input_and_favicon {
+  width: 100%;
+  position: relative;
 }
 
 .search_input {
-  width: 70%;
-  height: 30px;
+  width: 97%;
+  height: 35px;
   line-height: 40px;
   border: 1px solid #ccc;
-  border-radius: 5px;
-  padding-left: 10px;
+  border-radius: 15px;
   font-size: 14px;
+  border-right: none;
+  position: absolute;
+  left: 1%;
+}
+
+::-ms-clear {
+  display: none;
+}
+
+.favourites_icon {
+  width: 25px;
+  height: 25px;
+  background-color: inherit;
+  position: absolute;
+  right: 3%;
+  top: 20%;
+}
+
+.favourites_icon:hover {
+  cursor: pointer;
 }
 
 .search_button {
   width: 100px;
-  height: 30px;
+  height: 35px;
   text-align: center;
   background-color: #ff0000;
   color: #fff;
@@ -39,6 +64,7 @@
   margin-left: 10px;
   font-size: 16px;
   сursor: pointer;
+  vertical-align: middle;
 }
 
 .search_button:hover {
