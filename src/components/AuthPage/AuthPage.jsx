@@ -36,17 +36,20 @@ const AuthPage = ({ setToken }) => {
   return (
     <div className={s.form_wrapper}>
       <form className={s.form} onSubmit={onSubmit}>
-        <p className={s.form_title}>Вход</p>
-        <p className={s.form_test_title}>
-          Для тестирования, логин: Youtube, пароль: 123456{" "}
-        </p>
+        <h1 className={s.form_title}>Вход</h1>
+        <div className={s.form_test_title}>
+          🔐 Для тестирования:<br/>
+          Логин: <strong>Youtube</strong> | Пароль: <strong>123456</strong>
+        </div>
         <label className={s.label}>
-          Логин{" "}
+          Логин
           <input
             className={s.input}
             type="text"
+            value={login}
             onChange={onLoginChange}
-            placeholder="Введите свой login"
+            placeholder="Введите ваш логин"
+            required
           />
         </label>
 
@@ -55,13 +58,15 @@ const AuthPage = ({ setToken }) => {
           <input
             className={s.input}
             type="password"
+            value={password}
             onChange={onPasswordChange}
-            placeholder="Введите свой пароль"
+            placeholder="Введите ваш пароль"
+            required
           />
         </label>
 
         <button className={s.button} type="submit">
-          Войти
+          Войти →
         </button>
       </form>
     </div>
