@@ -1,22 +1,26 @@
 .search {
-  margin-bottom: 20px;
+  margin-bottom: 40px;
   margin-left: auto;
   margin-right: auto;
-  width: 70%;
+  width: 100%;
+  max-width: 900px;
+  padding: 0 24px;
 }
 
 .search_title {
-  height: 40px;
-  line-height: 40px;
-  font-size: 24px;
-  margin: 20px auto;
-  font-weight: bold;
+  font-size: 28px;
+  line-height: 1.4;
+  margin: 40px 0 32px 0;
+  font-weight: 600;
   text-align: center;
+  color: #030303;
 }
 
 .search_form {
   text-align: center;
   display: flex;
+  gap: 12px;
+  margin-bottom: 24px;
 }
 
 .input_and_favicon {
@@ -25,15 +29,25 @@
 }
 
 .search_input {
-  width: 97%;
-  height: 35px;
-  line-height: 40px;
-  border: 1px solid #ccc;
-  border-radius: 15px;
+  width: 100%;
+  height: 40px;
+  padding: 10px 16px 10px 16px;
+  border: 1px solid #d0d0d0;
+  border-radius: 24px;
   font-size: 14px;
-  border-right: none;
-  position: absolute;
-  left: 1%;
+  background-color: #f9f9f9;
+  transition: all 0.2s ease;
+}
+
+.search_input:focus {
+  outline: none;
+  background-color: #fff;
+  border-color: #030303;
+  box-shadow: 0 0 0 3px rgba(255, 0, 0, 0.1);
+}
+
+.search_input::placeholder {
+  color: #909090;
 }
 
 ::-ms-clear {
@@ -41,32 +55,44 @@
 }
 
 .favourites_icon {
-  width: 25px;
-  height: 25px;
-  background-color: inherit;
+  width: 24px;
+  height: 24px;
   position: absolute;
-  right: 3%;
-  top: 20%;
+  right: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .favourites_icon:hover {
-  cursor: pointer;
+  transform: translateY(-50%) scale(1.1);
+  opacity: 0.7;
 }
 
 .search_button {
-  width: 100px;
-  height: 35px;
-  text-align: center;
+  padding: 10px 24px;
+  height: 40px;
+  white-space: nowrap;
   background-color: #ff0000;
   color: #fff;
   border: none;
-  border-radius: 5px;
-  margin-left: 10px;
-  font-size: 16px;
-  сursor: pointer;
-  vertical-align: middle;
+  border-radius: 24px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  flex-shrink: 0;
 }
 
 .search_button:hover {
-  cursor: pointer;
+  background-color: #cc0000;
+  box-shadow: 0 2px 8px rgba(255, 0, 0, 0.3);
+}
+
+.search_button:active {
+  transform: scale(0.98);
 }
