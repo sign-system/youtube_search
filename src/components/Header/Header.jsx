@@ -1,5 +1,5 @@
 import s from "./Header.module.css";
-import logo from "../../assets/vricon2.png";
+import logo from "../../assets/youtube-logo.svg";
 import { NavLink } from "react-router-dom";
 import LogOutBtn from "./LogOutBtn/LogOutBtn";
 
@@ -13,7 +13,7 @@ const Header = () => {
   return (
     <header className="header">
       <div className={s.header_group}>
-        <img className={s.logo} src={logo} alt="logo"></img>
+        <img className={s.logo} src={logo} alt="YouTube logo"></img>
         <nav>
           <ul className={s.ul}>
             <li>
