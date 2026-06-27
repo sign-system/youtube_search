@@ -2,15 +2,39 @@ import { useEffect, useState } from "react";
 import style from "./VideoList.module.css";
 import { BiGridAlt } from "react-icons/bi";
 import { BsListUl } from "react-icons/bs";
+import { AiOutlineHeart, AiFillHeart } from "react-icons/ai";
 
 const VideoList = ({ videos }) => {
   const url = "https://www.youtube.com/embed/";
   const videoProps = videos;
   const [isDisplayStyleList, setDisplayStyle] = useState(true);
+  const [favorites, setFavorites] = useState([]);
+
+  useEffect(() => {
+    const storedFavorites = localStorage.getItem("favorites");
+    if (storedFavorites) {
+      setFavorites(JSON.parse(storedFavorites));
+    }
+  }, []);
 
   useEffect(() => {
     setDisplayStyle(true);
   }, [videoProps]);
+
+  const isFavorite = (videoId) => {
+    return favorites.some((v) => v.id.videoId === videoId);
+  };
+
+  const toggleFavorite = (video) => {
+    let updated = [...favorites];
+    if (isFavorite(video.id.videoId)) {
+      updated = updated.filter((v) => v.id.videoId !== video.id.videoId);
+    } else {
+      updated.push(video);
+    }
+    setFavorites(updated);
+    localStorage.setItem("favorites", JSON.stringify(updated));
+  };
 
   return (
     <>
@@ -80,6 +104,21 @@ const VideoList = ({ videos }) => {
               >
                 {video.snippet.description}
               </div>
+              <button
+                className={style.favorite_btn}
+                onClick={() => toggleFavorite(video)}
+                title={
+                  isFavorite(video.id.videoId)
+                    ? "Удалить из избранного"
+                    : "Добавить в избранное"
+                }
+              >
+                {isFavorite(video.id.videoId) ? (
+                  <AiFillHeart />
+                ) : (
+                  <AiOutlineHeart />
+                )}
+              </button>
             </div>
           </div>
         ))}
